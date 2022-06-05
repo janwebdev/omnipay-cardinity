@@ -83,6 +83,11 @@ abstract class AbstractResponse extends OmnipayAbstractResponse
         return $this->statusCode === Response::HTTP_ACCEPTED;
     }
 
+    protected function isStatusNeedPayment(): bool
+    {
+        return $this->statusCode === Response::HTTP_PAYMENT_REQUIRED;
+    }
+
     protected function getValueFromData(string $key, $default = null)
     {
         $data = $this->getData();

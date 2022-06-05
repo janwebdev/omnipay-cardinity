@@ -14,4 +14,9 @@ class CompletePurchaseResponse extends AbstractResponse
             'approved' === $this->getValueFromData('status')
             ;
     }
+
+    public function isDeclined(): bool
+    {
+        return $this->isStatusNeedPayment() && 'declined' === $this->getValueFromData('status');
+    }
 }
