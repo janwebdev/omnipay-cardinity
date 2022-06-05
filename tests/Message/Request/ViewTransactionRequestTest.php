@@ -10,52 +10,52 @@ use Symfony\Component\HttpFoundation\Request;
 
 class ViewTransactionRequestTest extends AbstractRequestTest
 {
-	private AbstractRequest $request;
+    private AbstractRequest $request;
 
-	private const TRANSACTION_REFERENCE = '90095d47-11bb-468b-8764-fd4fbb49a9f9';
+    private const TRANSACTION_REFERENCE = '90095d47-11bb-468b-8764-fd4fbb49a9f9';
 
-	protected function setUp(): void
-	{
-		$this->request = $this->makeRequest(ViewTransactionRequest::class);
-	}
+    protected function setUp(): void
+    {
+        $this->request = $this->makeRequest(ViewTransactionRequest::class);
+    }
 
-	public function testValidationFails(): void
-	{
-		$this->expectException(InvalidRequestException::class);
+    public function testValidationFails(): void
+    {
+        $this->expectException(InvalidRequestException::class);
 
-		$this->request->getData();
-	}
+        $this->request->getData();
+    }
 
-	public function testValidationPasses(): AbstractRequest
-	{
-		$parameters = [
-			'transactionReference' => self::TRANSACTION_REFERENCE
-		];
+    public function testValidationPasses(): AbstractRequest
+    {
+        $parameters = [
+            'transactionReference' => self::TRANSACTION_REFERENCE
+        ];
 
-		$purchaseRequest = $this->request->initialize($parameters);
-		$purchaseRequestData = $purchaseRequest->getData();
+        $purchaseRequest = $this->request->initialize($parameters);
+        $purchaseRequestData = $purchaseRequest->getData();
 
-		self::assertEmpty($purchaseRequestData);
+        self::assertEmpty($purchaseRequestData);
 
 
-		return $purchaseRequest;
-	}
+        return $purchaseRequest;
+    }
 
-	/**
-	 * @depends testValidationPasses
-	 * @param ViewTransactionRequest $purchaseRequest
-	 */
-	public function testHttpMethodIsGet(ViewTransactionRequest $purchaseRequest): void
-	{
-		self::assertEquals(Request::METHOD_GET, $purchaseRequest->getHttpMethod());
-	}
+    /**
+     * @depends testValidationPasses
+     * @param ViewTransactionRequest $purchaseRequest
+     */
+    public function testHttpMethodIsGet(ViewTransactionRequest $purchaseRequest): void
+    {
+        self::assertEquals(Request::METHOD_GET, $purchaseRequest->getHttpMethod());
+    }
 
-	/**
-	 * @depends testValidationPasses
-	 * @param ViewTransactionRequest $purchaseRequest
-	 */
-	public function testDataInstances(ViewTransactionRequest $purchaseRequest): void
-	{
-		self::assertInstanceOf(ViewTransactionResponse::class, $purchaseRequest->send());
-	}
+    /**
+     * @depends testValidationPasses
+     * @param ViewTransactionRequest $purchaseRequest
+     */
+    public function testDataInstances(ViewTransactionRequest $purchaseRequest): void
+    {
+        self::assertInstanceOf(ViewTransactionResponse::class, $purchaseRequest->send());
+    }
 }

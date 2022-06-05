@@ -56,8 +56,8 @@ abstract class AbstractRequestTest extends TestCase
         return $this->createMock(ThreeDS2Data::class);
     }
 
-	protected function createBrowserInfoEntityMock(): BrowserInfo
-	{
-		return $this->createMock(BrowserInfo::class);
-	}
+    protected function createBrowserInfoEntityMock(): BrowserInfo
+    {
+        return $this->createMock(BrowserInfo::class);
+    }
 }

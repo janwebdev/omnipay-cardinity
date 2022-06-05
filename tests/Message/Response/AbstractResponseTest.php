@@ -14,7 +14,7 @@ abstract class AbstractResponseTest extends TestCase
         $purchaseResponseStub = $this->createMock(static::RESPONSE_CLASS_NAME);
 
         $purchaseResponseStub->method('isSuccessful')
-            ->willThrowException(new \JsonException);
+            ->willThrowException(new \JsonException());
 
         $this->expectException(\JsonException::class);
 

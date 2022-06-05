@@ -1,6 +1,7 @@
 # Omnipay: Cardinity gateway
 Omnipay Cardinity Gateway is a payment processing library for PHP. It's based on [Omnipay package](https://github.com/thephpleague/omnipay).
 
+[![Unit Tests](https://github.com/janwebdev/omnipay-cardinity/actions/workflows/run-tests.yml/badge.svg?branch=main&event=label)](https://github.com/janwebdev/omnipay-cardinity/actions/workflows/run-tests.yml)
 [![Latest Stable Version](https://poser.pugx.org/janwebdev/omnipay-cardinity/v)](//packagist.org/packages/janwebdev/omnipay-cardinity) [![Total Downloads](https://poser.pugx.org/janwebdev/omnipay-cardinity/downloads)](//packagist.org/packages/janwebdev/omnipay-cardinity) [![Latest Unstable Version](https://poser.pugx.org/janwebdev/omnipay-cardinity/v/unstable)](//packagist.org/packages/janwebdev/omnipay-cardinity) [![License](https://poser.pugx.org/janwebdev/omnipay-cardinity/license)](//packagist.org/packages/deh4eg/omnipay-cardinity)
 
 ## Installation
