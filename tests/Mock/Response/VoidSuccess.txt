@@ -1,0 +1,13 @@
+HTTP/1.1 201 Created
+Server: nginx
+Content-Type: application/json
+Content-Length: 2343
+
+{
+   "id": "25e6f869-6675-4488-bd47-ccd298f74b3f",
+   "type": "void",
+   "created": "2015-01-16T09:05:27Z",
+   "live": true,
+   "parent_id": "90095d47-11bb-468b-8764-fd4fbb49a9f9",
+   "status": "approved"
+}
